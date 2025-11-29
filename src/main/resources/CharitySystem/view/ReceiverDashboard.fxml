@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="CharitySystem.view.ReceiverDashboardController"
+      spacing="12">
+    <padding>
+        <Insets top="12" right="12" bottom="12" left="12"/>
+    </padding>
+
+    <!-- Top bar -->
+    <ToolBar>
+        <Label text="Receiver Dashboard" style="-fx-font-size:18; -fx-font-weight:bold;"/>
+        <Pane HBox.hgrow="ALWAYS"/>
+        <Button text="Refresh" onAction="#goDashboard"/>
+        <Button text="Logout" onAction="#logout"/>
+    </ToolBar>
+
+    <!-- Table of PENDING donations -->
+    <VBox spacing="8">
+        <padding>
+            <Insets top="8" right="0" bottom="0" left="0"/>
+        </padding>
+
+        <TableView fx:id="donationsTable" prefHeight="520">
+            <columns>
+                <TableColumn fx:id="colItem" text="Item" prefWidth="200"/>
+                <TableColumn fx:id="colQty" text="Qty" prefWidth="80"/>
+                <TableColumn fx:id="colAddress" text="Address" prefWidth="320"/>
+                <TableColumn fx:id="colPhone" text="Phone" prefWidth="160"/>
+                <TableColumn fx:id="colStatus" text="Status" prefWidth="140"/>
+            </columns>
+        </TableView>
+
+        <HBox spacing="8">
+            <Button text="Accept / Claim Selected" onAction="#claimSelected"/>
+            <Label fx:id="statusLabel" textFill="dodgerblue"/>
+        </HBox>
+    </VBox>
+</VBox>

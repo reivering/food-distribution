@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="CharitySystem.view.DonorDashboardController"
+      spacing="12" prefWidth="1280" prefHeight="800" style="-fx-padding:12;">
+
+    <!-- Top bar -->
+    <ToolBar>
+        <Label text="Dashboard" style="-fx-font-size:18; -fx-font-weight:bold;"/>
+        <Pane HBox.hgrow="ALWAYS"/>
+        <Button text="Donate" onAction="#goDonate"/>
+        <Button text="Logout" onAction="#logout"/>
+    </ToolBar>
+
+    <!-- Big tile -->
+    <Label fx:id="myDonationsLabel" text="0 donations by you"
+           maxWidth="Infinity"
+           style="-fx-background-color:#2e7d32; -fx-text-fill:white; -fx-padding:12; -fx-background-radius:8;"/>
+
+    <!-- Three tiles -->
+    <GridPane hgap="12" vgap="12">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="33.33"/>
+            <ColumnConstraints percentWidth="33.33"/>
+            <ColumnConstraints percentWidth="33.33"/>
+        </columnConstraints>
+
+        <Label fx:id="notProcessedLabel" GridPane.columnIndex="0"
+               text="0 donation requests not processed"
+               wrapText="true" maxWidth="Infinity"
+               style="-fx-background-color:#1e88e5; -fx-text-fill:white; -fx-padding:12; -fx-background-radius:8;"/>
+
+        <Label fx:id="acceptedToAssignLabel" GridPane.columnIndex="1"
+               text="0 donations accepted and to be assigned"
+               wrapText="true" maxWidth="Infinity"
+               style="-fx-background-color:#2e7d32; -fx-text-fill:white; -fx-padding:12; -fx-background-radius:8;"/>
+
+        <Label fx:id="notCollectedYetLabel" GridPane.columnIndex="2"
+               text="0 donations not collected yet"
+               wrapText="true" maxWidth="Infinity"
+               style="-fx-background-color:#c62828; -fx-text-fill:white; -fx-padding:12; -fx-background-radius:8;"/>
+    </GridPane>
+
+</VBox>
